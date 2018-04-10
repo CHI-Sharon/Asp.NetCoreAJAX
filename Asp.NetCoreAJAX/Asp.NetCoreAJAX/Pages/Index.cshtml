@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="my-3">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Demo of how to make AJAX call in Asp.Net Core 2 using razor pages</div>
+        </div>
+        <div class="card-body">
+            <p>To get AJAX calls working like previous versions of MVC, you would need <a href="https://github.com/aspnet/jquery-ajax-unobtrusive">jQuery Unobtrusive Ajax</a></p>
+            <p>Once the js file is included in your code, you would utilize data-* attributes to </p>
+            <pre><code>&lt;script src="~/js/jquery.unobtrusive-ajax.js"&gt;&lt;/script&gt;</code></pre>
+
+
+            <form action="/Time" method="get"
+                  data-ajax-update="#Results" data-ajax-mode="REPLACE"
+                  data-ajax="true" data-ajax-method="GET">
+                <div class="py-3">
+                    <div id="Results">Place holder will be replaced by time when you click the button</div>
+                </div>
+                <input type="submit" value="Get time" class="btn btn-primary" />
+            </form>
+
+            <div class="font-weight-light my-5">
+                Complete mapping of each AjaxOptions with new HTML attribute can be found here:
+                <p> <a href="https://dotnetthoughts.net/jquery-unobtrusive-ajax-helpers-in-aspnet-core/">jQuery Unobtrusive Ajax Helpers in ASP.NET Core</a></p>
+            </div>
+        </div>
+    </div>
+</div>
